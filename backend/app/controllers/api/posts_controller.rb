@@ -10,7 +10,7 @@ class Api::PostsController < ApplicationController
 
   # GET /posts/1
   def show
-    sleep 1
+    # sleep 1
     render json: @post
   end
 
@@ -19,7 +19,7 @@ class Api::PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
-      render json: @post, status: :created, location: @post
+      render json: @post, status: :created, location: api_post_url(@post)
     else
       render json: @post.errors, status: :unprocessable_entity
     end

@@ -11,7 +11,7 @@
 Post.destroy_all
 
 #create 10 posts
-10.times do
+12.times do
     Post.create(
         title: Faker::Lorem.sentence(word_count: 4),
         body: Faker::Lorem.paragraph(sentence_count: 7)
